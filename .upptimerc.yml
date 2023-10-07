@@ -27,8 +27,8 @@ status-website:
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   cname: statuspage.is-a.fun
   # baseUrl: /uptime-monitor
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: L RMN Status Page
+  logoUrl: https://media.discordapp.net/attachments/1098969636306960465/1156498451526324224/lrmncircle.png
+  name: L RMN StatusPage
   theme: night
   introTitle: "L RMN's status page for his websites. Powered by github actions."
   introMessage: See which of my websites are up, which are down, and which are broken here!
