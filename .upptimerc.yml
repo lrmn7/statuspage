@@ -37,6 +37,8 @@ status-website:
       href: /
     - title: GitHub
       href: https://github.com/$OWNER
+    - title: Community
+      href: https://discord.gg/WFfjrQxnfH
       
 theme: dark
 skipDescriptionUpdate: true
