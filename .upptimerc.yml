@@ -1,31 +1,54 @@
 # Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+owner: lrmn7 # Your GitHub organization or username, where this repository lives
+repo: status-page # The name of this repository
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
+  - name: Lucy Website
+    url: https://lucy.is-a.fun/
+  - name: Dashboard Lucy
+    url: https://dash-lucy.is-a.fun/
+  - name: Miu Website
+    url: https://miu.is-a.fun/
+  - name: +62 Radio Website
+    url: https://62radio.is-a.fun/
+  - name: Dailycat Website
+    url: https://dailycat.is-a.fun/
+  - name: Soothe Website
+    url: https://soothe.is-a.fun/
+  - name: Oh!BOTLiST
+    url: https://ohbotlist.hop.sh/
+  - name: L RMN Page
+    url: https://lrmn.is-a.dev/
+  - name: L RMN Virtual Photography
+    url: https://lrmn-vp.site/
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
+  # Add your custom domains names, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
+  cname: statuspage.is-a.fun
+  # baseUrl: /uptime-monitor
   logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  name: L RMN Status Page
+  theme: night
+  introTitle: "L RMN's status page for his websites. Powered by github actions."
+  introMessage: See which of my websites are up, which are down, and which are broken here!
   navbar:
     - title: Status
       href: /
     - title: GitHub
-      href: https://github.com/$OWNER/$REPO
+      href: https://github.com/$OWNER
+      
+theme: dark
+skipDescriptionUpdate: true
+skipTopicsUpdate: true
 
+workflowSchedule:
+  graphs: "*/5 * * * *"
+  responseTime: "0 23 * * *"
+  staticSite: "0 1 * * *"
+  summary: "*/5 * * * *"
+  updateTemplate: "0 0 * * *"
+  updates: "0 3 * * *"
+  uptime: "*/5 * * * *"
 # Upptime also supports notifications, assigning issues, and more
 # See https://upptime.js.org/docs/configuration
