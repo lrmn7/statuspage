@@ -4,9 +4,9 @@
     "url": "https://lucy.is-a.fun/",
     "icon": "https://icons.duckduckgo.com/ip3/lucy.is-a.fun.ico",
     "slug": "lucy-website",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -15,7 +15,9 @@
     "timeWeek": 226,
     "timeMonth": 216,
     "timeYear": 216,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2023-11-02": 0
+    }
   },
   {
     "name": "Dashboard Lucy",
@@ -121,18 +123,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/ohbotlist.hop.sh.ico",
     "slug": "oh-bot-li-st",
     "status": "down",
-    "uptime": "90.39%",
+    "uptime": "88.93%",
     "uptimeDay": "0.00%",
-    "uptimeWeek": "66.08%",
-    "uptimeMonth": "90.39%",
-    "uptimeYear": "90.39%",
+    "uptimeWeek": "60.19%",
+    "uptimeMonth": "88.93%",
+    "uptimeYear": "88.93%",
     "time": 770,
     "timeDay": 225,
     "timeWeek": 542,
     "timeMonth": 770,
     "timeYear": 770,
     "dailyMinutesDown": {
-      "2023-11-02": 69,
+      "2023-11-02": 663,
       "2023-11-01": 1440,
       "2023-10-31": 1440,
       "2023-10-30": 442,
