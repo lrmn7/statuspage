@@ -1,7 +1,7 @@
 url: https://ohbotlist.hop.sh/
-status: up
-code: 200
-responseTime: 784
-lastUpdated: 2023-11-06T19:11:26.098Z
+status: down
+code: 502
+responseTime: 171
+lastUpdated: 2023-11-06T19:43:49.814Z
 startTime: 2023-10-07T22:16:27.911Z
 generator: Upptime <https://github.com/upptime/upptime>
