@@ -3,25 +3,29 @@ owner: lrmn7 # Your GitHub organization or username, where this repository lives
 repo: statuspage # The name of this repository
 
 sites:
+  - name: L RMN Page
+    url: https://lrmn.is-a.dev/
+  - name: Personal Bio
+    url: https://is-a.fun/
+  - name: Virtual Photography
+    url: https://lrmn-vp.site/
+  - name: OhBOTLiST
+    url: https://ohbot.is-a.fun/
   - name: Lucy Website
     url: https://lucy.is-a.fun/
   - name: Dashboard Lucy
     url: https://dash-lucy.is-a.fun/
-  - name: Miu Website
-    url: https://miu.is-a.fun/
-  - name: +62 Radio Website
-    url: https://62radio.is-a.fun/
-  - name: Dailycat Website
-    url: https://dailycat.is-a.fun/
-  - name: Soothe Website
-    url: https://soothe.is-a.fun/
-  - name: Oh!BOTLiST
-    url: https://ohbotlist.hop.sh/
-  - name: L RMN Page
-    url: https://lrmn.is-a.dev/
-  - name: L RMN Virtual Photography
-    url: https://lrmn-vp.site/
-
+  - name: Mewwme's Website
+    url: https://meww.me/
+  - name: Mewwme's bot
+    url: http://168.119.88.145:20421
+  - name: Miu🌛 Bot
+    url: http://168.119.88.145:3013
+  - name: +62 Radio Bot
+    url: http://168.119.88.145:3014
+  - name: Moo ♪ Bot
+    url: http://168.119.88.145:3022
+    
 status-website:
   # Add your custom domains names, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
