@@ -25,7 +25,7 @@ sites:
     url: http://168.119.88.145:3014
   - name: Moo ♪ Bot
     url: http://168.119.88.145:3022
-    
+
 status-website:
   # Add your custom domains names, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
@@ -42,7 +42,7 @@ status-website:
     - title: GitHub
       href: https://github.com/$OWNER
     - title: Community
-      href: https://discord.gg/WFfjrQxnfH
+      href: https://discord.gg/6EXgrmtkPX
       
 theme: dark
 skipDescriptionUpdate: true
