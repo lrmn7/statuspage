@@ -18,7 +18,7 @@ sites:
   - name: Mewwme's Website
     url: https://meww.me/
   - name: Mewwme's bot
-    url: http://168.119.88.145:20421
+    url: http://168.119.88.145:3026
   - name: Miu🌛 Bot
     url: http://168.119.88.145:3013
   - name: +62 Radio Bot
