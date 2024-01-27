@@ -61,11 +61,11 @@
     "icon": "https://icons.duckduckgo.com/ip3/ohbot.is-a.fun.ico",
     "slug": "oh-bot-li-st",
     "status": "up",
-    "uptime": "46.16%",
+    "uptime": "46.35%",
     "uptimeDay": "100.00%",
-    "uptimeWeek": "20.49%",
-    "uptimeMonth": "2.81%",
-    "uptimeYear": "46.16%",
+    "uptimeWeek": "26.18%",
+    "uptimeMonth": "4.12%",
+    "uptimeYear": "46.35%",
     "time": 547,
     "timeDay": 79,
     "timeWeek": 161,
@@ -223,9 +223,9 @@
     "url": "http://168.119.88.145:20421",
     "icon": "https://icons.duckduckgo.com/ip3/168.119.88.145.ico",
     "slug": "mewwme-s-bot",
-    "status": "up",
+    "status": "down",
     "uptime": "100.00%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.99%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "100.00%",
@@ -234,7 +234,9 @@
     "timeWeek": 234,
     "timeMonth": 234,
     "timeYear": 234,
-    "dailyMinutesDown": {}
+    "dailyMinutesDown": {
+      "2024-01-27": 0
+    }
   },
   {
     "name": "Miu🌛 Bot",
