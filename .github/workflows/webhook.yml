@@ -5,10 +5,10 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '*/25 * * * *'
 
 jobs:
-  send_discord_message:
+  send-uptime-graph:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,70 +20,38 @@ jobs:
       run: |
         readme_content=$(cat README.md)
         echo "::set-output name=content::$readme_content"
-
-    - name: Extract uptime status and graph
-      id: extract_info
+    
+    - name: Fetch latest uptime graph
+      id: fetch_graph
       run: |
-        content="${{ steps.fetch_readme.outputs.content }}"
-        status=$(echo "$content" | grep -oP '(?<=<!--live status--> ).*' || echo "Status unknown")
-        graph_url=$(echo "$content" | grep -oP '(?<=!\[Uptime Graph\]\().*(?=\))' || echo "")
-        uptime_status="Status unknown"
-        color=15158332
-
-        if [[ "$status" == *"All systems operational"* ]]; then
-          uptime_status="All systems operational"
-          color=3066993 # Green
-        elif [[ "$status" == *"Partial Outage"* ]]; then
-          uptime_status="Partial Outage"
-          color=15105570 # Orange
-        elif [[ "$status" == *"Outage detected"* ]]; then
-          uptime_status="Outage detected"
-          color=15158332 # Red
-        fi
-
-        echo "::set-output name=status_text::$uptime_status"
+        graph_url="https://raw.githubusercontent.com/${{ github.repository }}/HEAD/graphs/uptime-graph.svg"
         echo "::set-output name=graph_url::$graph_url"
-        echo "::set-output name=color::$color"
 
-    - name: Print extracted information for debugging
+    - name: Print fetched content for debugging
       run: |
-        echo "Uptime status: ${{ steps.extract_info.outputs.status_text }}"
-        echo "Uptime graph URL: ${{ steps.extract_info.outputs.graph_url }}"
-        echo "Embed color: ${{ steps.extract_info.outputs.color }}"
+        echo "Fetched README content: ${{ steps.fetch_readme.outputs.content }}"
+        echo "Uptime graph URL: ${{ steps.fetch_graph.outputs.graph_url }}"
 
     - name: Send site content and graph to Discord
       env:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       run: |
-        echo "Sending status and graph to Discord"
+        content="${{ steps.fetch_readme.outputs.content }}"
+        graph_url="${{ steps.fetch_graph.outputs.graph_url }}"
+        # Properly escape the fetched content
+        escaped_content=$(echo "$content" | jq -Rsa .)
+        echo "Sending README content and uptime graph to Discord"
         curl -H "Content-Type: application/json" \
              -d "{
                    \"embeds\": [
                      {
-                       \"title\": \"Miko Radio Uptime Status Update\",
-                       \"description\": \"Here is the latest status update for Miko Radio.\",
-                       \"color\": ${{ steps.extract_info.outputs.color }},
-                       \"fields\": [
-                         {
-                           \"name\": \"Website\",
-                           \"value\": \"[Miko Radio](https://mikoradio.com)\",
-                           \"inline\": true
-                         },
-                         {
-                           \"name\": \"Status Page\",
-                           \"value\": \"[Miko Radio Status](https://status.mikoradio.com)\",
-                           \"inline\": true
-                         },
-                         {
-                           \"name\": \"Summary\",
-                           \"value\": \"${{ steps.extract_info.outputs.status_text }}\",
-                           \"inline\": false
-                         }
-                       ],
+                       \"title\": \"Uptime Status Update\",
+                       \"description\": $escaped_content,
+                       \"color\": 5814783,
                        \"image\": {
-                         \"url\": \"${{ steps.extract_info.outputs.graph_url }}\"
+                         \"url\": \"$graph_url\"
                        }
                      }
                    ]
                  }" \
-             $DISCORD_WEBHOOK_URL || echo "Failed to send message to Discord"
+             $DISCORD_WEBHOOK_URL
