@@ -5,7 +5,7 @@ on:
     branches:
       - main
   schedule:
-    - cron: '*/1 * * * *'
+    - cron: '*/30 * * * *'
 
 jobs:
   send_discord_message:
@@ -14,9 +14,6 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
-
-    - name: Install dependencies
-      run: sudo apt-get install -y jq
 
     - name: Fetch README content
       id: fetch_readme
@@ -28,8 +25,8 @@ jobs:
       id: extract_info
       run: |
         content="${{ steps.fetch_readme.outputs.content }}"
-        status=$(echo "$content" | grep -oP '(?<=<!--live status--> ).*')
-        graph_url=$(echo "$content" | grep -oP '(?<=!\[Uptime Graph\]\().*(?=\))')
+        status=$(echo "$content" | grep -oP '(?<=<!--live status--> ).*' || echo "Status unknown")
+        graph_url=$(echo "$content" | grep -oP '(?<=!\[Uptime Graph\]\().*(?=\))' || echo "")
         uptime_status="Status unknown"
         color=15158332
 
@@ -58,9 +55,6 @@ jobs:
       env:
         DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
       run: |
-        color="${{ steps.extract_info.outputs.color }}"
-        status_text="${{ steps.extract_info.outputs.status_text }}"
-        graph_url="${{ steps.extract_info.outputs.graph_url }}"
         echo "Sending status and graph to Discord"
         curl -H "Content-Type: application/json" \
              -d "{
@@ -68,7 +62,7 @@ jobs:
                      {
                        \"title\": \"Miko Radio Uptime Status Update\",
                        \"description\": \"Here is the latest status update for Miko Radio.\",
-                       \"color\": $color,
+                       \"color\": ${{ steps.extract_info.outputs.color }},
                        \"fields\": [
                          {
                            \"name\": \"Website\",
@@ -82,52 +76,14 @@ jobs:
                          },
                          {
                            \"name\": \"Summary\",
-                           \"value\": \"$status_text\",
+                           \"value\": \"${{ steps.extract_info.outputs.status_text }}\",
                            \"inline\": false
                          }
                        ],
                        \"image\": {
-                         \"url\": \"$graph_url\"
+                         \"url\": \"${{ steps.extract_info.outputs.graph_url }}\"
                        }
                      }
                    ]
                  }" \
-             $DISCORD_WEBHOOK_URL
-
-
-
-
-
-   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+             $DISCORD_WEBHOOK_URL || echo "Failed to send message to Discord"
