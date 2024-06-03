@@ -6,9 +6,9 @@ sites:
   - name: Website
     url: https://meww.me/
   - name: Docs
-    url: https://docs.meww.me
+    url: https://docs.meww.me/
   - name: Webserver
-    url: https://ws.meww.me
+    url: https://ws.meww.me/
 
 
 status-website:
