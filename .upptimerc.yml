@@ -3,46 +3,31 @@ owner: lrmn7 # Your GitHub organization or username, where this repository lives
 repo: statuspage # The name of this repository
 
 sites:
-  - name: L RMN Page
-    url: https://lrmn.is-a.dev/
-  - name: Personal Bio
-    url: https://is-a.fun/
-  - name: Virtual Photography
-    url: https://lrmn-vp.site/
-  - name: OhBOTLiST
-    url: https://ohbot.is-a.fun/
-  - name: Lucy Website
-    url: https://lucy.is-a.fun/
-  - name: Dashboard Lucy
-    url: https://dash-lucy.is-a.fun/
-  - name: Mewwme's Website
+  - name: Website
     url: https://meww.me/
-  - name: Mewwme's bot
-    url: http://168.119.88.145:3026
-  - name: Miu🌛 Bot
-    url: http://168.119.88.145:3013
-  - name: +62 Radio Bot
-    url: http://168.119.88.145:3014
-  - name: Moo ♪ Bot
-    url: http://168.119.88.145:3022
+  - name: Docs
+    url: https://docs.meww.me
+  - name: Webserver
+    url: https://ws.meww.me
+
 
 status-website:
   # Add your custom domains names, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   cname: statuspage.is-a.fun
   # baseUrl: /uptime-monitor
-  logoUrl: https://media.discordapp.net/attachments/1098969636306960465/1156498451526324224/lrmncircle.png
-  name: L RMN StatusPage
+  logoUrl: https://avatars.githubusercontent.com/u/151395981?s=200&v=4
+  name: Mewwme's Uptime
   theme: night
-  introTitle: "L RMN's status page for his websites. Powered by github actions."
+  introTitle: "Mewwme's Resources. Powered by github actions."
   introMessage: See which of my websites are up, which are down, and which are broken here!
   navbar:
-    - title: Status
-      href: /
-    - title: GitHub
-      href: https://github.com/$OWNER
-    - title: Community
-      href: https://discord.gg/6EXgrmtkPX
+    - title: Invite
+      href: https://meww.me/invite
+    - title: Server Support
+      href: https://meww.me/support
+    - title: Top.gg
+      href: https://meww.me/topgg
       
 theme: dark
 skipDescriptionUpdate: true
