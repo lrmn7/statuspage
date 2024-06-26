@@ -1,7 +1,7 @@
 url: https://ws.meww.me/
-status: up
-code: 200
-responseTime: 150
-lastUpdated: 2024-06-26T05:26:32.993Z
+status: down
+code: 502
+responseTime: 46
+lastUpdated: 2024-06-26T14:22:28.452Z
 startTime: 2024-06-03T01:10:39.995Z
 generator: Upptime <https://github.com/upptime/upptime>
